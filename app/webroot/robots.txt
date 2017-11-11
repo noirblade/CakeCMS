@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /contact
+Sitemap: http://psyhoterapia.com/sitemap.xml

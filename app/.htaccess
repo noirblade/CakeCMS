@@ -1,0 +1,26 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+
+    RewriteCond %{HTTP_HOST} ^www.psyhoterapia\.com$ [NC]
+    RewriteRule ^.*$ http://psyhoterapia.com%{REQUEST_URI} [R=301,L]
+
+    RewriteRule    ^$    webroot/    [L]
+    RewriteRule    (.*) webroot/$1    [L]
+</IfModule>
+
+<IfModule mod_expires.c>
+    ### activate mod_expires
+    ExpiresActive On
+    ### Expire .gif’s 1 month from when they’re accessed (Default algorithm)
+    ExpiresByType image/gif A2592000
+    ### Expire .jpg’s 1 month from when they’re accessed
+    ExpiresByType image/jpg A2592000
+    ### Expire .png’s 1 month from when they’re accessed
+    ExpiresByType image/png A2592000
+    ### Expire .js’s 7 days from when they’re accessed (Alternative algorithm)
+    ExpiresByType text/js "access plus 7 days"
+    ### Expire .css’s 30 days from when they’re accessed
+    ExpiresByType text/css "access plus 30 days"
+    ### Expire everything else 1 day from when it’s last modified
+    ExpiresDefault "access plus 30 days"
+</IfModule>
