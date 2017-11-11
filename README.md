@@ -1,0 +1,2 @@
+# CakeCMS
+Simple Cake CMS
